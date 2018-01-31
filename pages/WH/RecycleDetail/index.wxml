@@ -1,0 +1,44 @@
+<view class="topBlock">
+    <text class="topItem">物流商：{{recycleList[0]}}</text>
+    <text class="topItem">共{{recycleList[1].length}}单</text>
+    <!--<view class="topItem">
+        <progress percent="{{percentT}}" show-info />
+    </view>-->
+</view>
+
+<view class="mainBlock">
+    <view class="recycleItem" wx:for="{{recycleList[1]}}" wx:key="">
+   <!--top--> 
+<view class="top">
+    <!--left-->
+    <view class="left">
+        <view class="item">
+            <text class="orderno" style="width:70%;">回单号：{{item.recycleno}}</text>
+            <text class="rate" style="width:30%;">进度：{{item.count}}/{{item.countsupplier}}</text>
+        </view>
+        <view class="strap"></view>
+        <view class="item big">
+            <text>已回收数量：{{item.snumber}}</text>
+            <text class="cutOffRule">已回收重量：{{item.sweight
+}}</text>
+        </view>
+    </view>
+    <!--right-->
+    <view class="right" bindtap="toDetail" data-index="{{index}}">
+        <image src="../../../images/icon/ic_examine.png"></image>
+    </view>
+</view>  
+
+<!--percent-->
+<view class="percent">
+    <progress percent="{{item.count/item.countsupplier*100}}" active />
+    <!--<progress percent="{{item.down/item.hasOrderNum*100}}" active color="#00EEEE"/>-->
+</view>
+
+    </view>
+
+</view>
+
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

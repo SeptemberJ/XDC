@@ -1,0 +1,53 @@
+<!--<view class="userinfo">
+	<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap="chooseImage"></image>
+	<text class="userinfo-nickname">客户：{{accountName}}</text>
+</view>-->
+<scroll-view scroll-y="true">
+	<!--stock-->
+	<view bindtap="navigateToStock" class="tableviewcell" wx:if="{{role==1?true:false}}">
+		<image src="../../../images/icon/warehouse.png" />
+		<text>我的库存</text>
+		<view class="right">
+			<image data-index="{{index}}" src="../../../images/icon-arrowdown.png" />
+		</view>
+	</view>
+	<!--apply-->
+	<view bindtap="navigateToApply" class="tableviewcell" wx:if="{{role==1?true:false}}">
+		<image src="../../../images/icon/recycle.png" />
+		<text>回收申请</text>
+		<view class="right">
+			<image data-index="{{index}}" src="../../../images/icon-arrowdown.png" />
+		</view>
+	</view>
+	<!--address-->
+	<view bindtap="navigateToAddress" class="tableviewcell" wx:if="{{role==1?true:false}}">
+		<image src="../../../images/icon/address.png" />
+		<text>收货地址</text>
+		<view class="right">
+			<image  data-index="{{index}}" src="../../../images/icon-arrowdown.png" />
+		</view>
+	</view>
+	<!--price-->
+	<view bindtap="navigateToPrice" class="tableviewcell" wx:if="{{role==1?true:false}}">
+		<image src="../../../images/icon/price.png" />
+		<text>价格信息</text>
+		<view class="right">
+			<image  data-index="{{index}}" src="../../../images/icon-arrowdown.png" />
+		</view>
+	</view>
+
+	<view bindtap="goModifyPass" class="tableviewcell">
+		<image src="../../../images/icon/password.png" />
+		<text>修改密码</text>
+		<view class="right">
+			<image  data-index="{{index}}" src="../../../images/icon-arrowdown.png" />
+		</view>
+	</view>
+
+	<button bindtap="logout" type="warn" class="logout">退出</button>
+  
+</scroll-view>
+
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

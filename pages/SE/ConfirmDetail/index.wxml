@@ -1,0 +1,63 @@
+<view class="wrapper">
+
+  <!--地址信息-->
+  <view class="addressInfor">
+    <view class="info-item">
+      <view class="left-icon">
+        <image src="../../../images/icon_address.png" />
+      </view>
+      <view class="right-info">
+          <view class="top">
+            <text class="top-item">联系人:{{contactInfo.username}}</text>
+            <text class="top-item">{{contactInfo.smobile}}</text>
+          </view>
+          
+          <view class="bot">
+            <text>回收地址:</text>
+            <text>{{contactInfo.province+contactInfo.sarea+contactInfo.region+contactInfo.sblock}}</text>
+          </view>
+      </view>
+    </view>
+  </view>
+
+  <!--物流商提交信息-->
+  <view class="order-detail">
+    <!--供应商申请信息-->
+    <view class="item applyInformation">
+      <text>订单号:{{contactInfo.orderno}}</text>
+      <view class="applyInfo">
+        <text class="">物品种类:{{contactInfo.material}}</text>
+        <text class="">预约数量:{{contactInfo.number}}</text>
+      </view>
+    </view>
+    <!--物流商提交信息-->
+    <view class="item mainInfor">
+      <view class="mainInforItem" wx:for="{{BatteryList}}" wx:key="">
+        <text class="bty">种类:{{item.btype}}</text>
+        <text class="bty">数量:{{item.number}}</text>
+        <text class="bty">重量:{{item.lweight}}</text>
+      </view>
+      <view class="mainInforItem botInfo">
+        <text>三联单号:{{attachInfo.triplicate?attachInfo.triplicate:'----'}}</text>
+        <!-- <text>回收与否:{{attachInfo.status1?attachInfo.status1:'----'}}</text> -->
+      </view>
+      <view class="mainInforItem botInfo">
+        <text>未回收原因:{{attachInfo.why?attachInfo.why:'----'}}</text>
+      </view>
+    </view>
+    <!--时间信息-->
+    <view class="item dateBox">
+    </view>
+  </view>  
+
+</view>
+
+<view class="orderBt">
+  <button  bindtap="backEdit" class="backEditBt" hover-class="bthoverB" disabled="{{canDo}}">返回</button>
+  <button  bindtap="confirmSubmit" class="confirmBt" hover-class="bthoverC" disabled="{{canDo}}">提交</button>
+</view>
+
+
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

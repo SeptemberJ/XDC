@@ -1,0 +1,20 @@
+
+
+<view class="priceList" wx:if="{{priceList.priceInfo.length>0}}">
+	<view  class="price_item tit">
+		<text>日期</text>
+		<text>电池种类</text>
+		<text>单价</text>
+		<text>单位</text>
+	</view>
+	<view wx:for="{{priceList.priceInfo}}" class="price_item" wx:key=''>
+		<text>{{priceList.date}}</text>
+		<text>{{item.btype}}</text>
+		<text>{{item.price}}</text>
+		<text>{{item.unit}}</text>
+	</view>
+</view>
+
+<view wx:else class="noData">
+		<text>对不起，您还没有相关的价格信息！</text>
+	</view>

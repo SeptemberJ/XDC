@@ -1,0 +1,40 @@
+<view class="search_block">
+    <view class="search_item">
+        <text class="se_name">物流商：</text>
+        <input class="se_name" value="{{se_name}}" placeholder="输入物流商名称" bindinput="changeNmae"/>
+    </view>
+    <view class="search_item">
+          <picker mode="date" value="{{date}}" bindchange="bindDateChange" end="{{dateE}}">
+            <view class="picker">
+                日期: {{date}}
+            </view>
+          </picker>
+          <!--<picker mode="date" value="{{dateE}}" bindchange="bindDateEChange" >
+            <view class="picker">
+                结束: {{dateE}}
+            </view>
+          </picker>-->
+    </view>
+    <view class="goSearch" bindtap="search">
+        <image src="../../../images/search2.png"></image>
+    </view>
+</view>
+
+<!--result-->
+<view class="orderList" wx:if="{{result.length>0}}">
+    <view class="orderListItem" wx:for="{{result}}" wx:key="" bindtap="goPutInStorage" data-index="{{index}}" data-num="{{item.number}}" >
+        <view class="orderCont">
+            <text class="bigF">回单号:{{item.number}}</text>
+        </view>
+        <view class="mid">
+			<text>{{item.done}}/{{item.total}}</text>
+		</view>
+        <view class="right">
+			<image  data-index="{{index}}"  src="../../../images/icon/eye.png" />
+		</view>
+    </view>
+</view>
+
+<loading hidden="{{loadingHidden}}">
+  登录中...
+</loading>

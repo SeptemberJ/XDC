@@ -1,0 +1,104 @@
+page {
+	background: #eee;
+}
+
+/*user info*/
+.userinfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:center;
+	height: 100rpx;
+	background: white;
+	margin-bottom: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 148rpx;
+  height: 148rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+	height: 100rpx;
+	font-weight: bold;
+	font-size: 32rpx;
+  	color: #666;
+  	line-height: 100rpx;
+}
+
+/*menu list*/
+.tableviewcell {
+	padding: 20rpx;
+	border-bottom: 1rpx solid #ddd;
+	color: #666;
+	background: white;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
+/*icon*/
+.tableviewcell image {
+	
+	width: 60rpx;
+	height: 60rpx;
+}
+
+/*text*/
+.tableviewcell text {
+	flex-grow:10;
+	padding-left: 10rpx;
+	font-size: 16px;
+}
+.tableviewcell .right{
+	flex-grow:1;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	/*border-left: 1px solid #ccc;*/
+	padding-top: 15rpx;
+}
+.tableviewcell .right image{
+	display: block;
+	float: right;
+	width:50rpx;
+	height: 50rpx;
+}
+
+.tel{
+	text-align: right;
+	margin-right: 33rpx;
+}
+/*button*/
+.logout {
+	margin: 30rpx;
+}
+
+/*order*/
+/*.order-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  margin: 20rpx 0;
+  padding: 20rpx 0;
+}
+
+.order {
+	width: 33.3%;
+	text-align: center;
+}
+
+.order image {
+	width: 90rpx;
+	height: 90rpx;
+}
+
+.order text{
+	display: block;
+	font-size: 30rpx;
+	color: #333;
+}*/

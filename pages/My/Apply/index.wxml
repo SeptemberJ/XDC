@@ -1,0 +1,55 @@
+<scroll-view scroll-y="true">
+<!--背景-->
+  <view class="item picture">
+    <!--<image src="../../../images/apply-battery.jpg"></image>-->
+  </view>
+
+  <!--物品类别-->
+  <view class="item">
+    <view class="left h-s">物品类别</view>
+    <picker name="kindF" class="right" bindchange="KindFPickerChange" value="{{kindFIndex}}" range="{{kindF}}" range-key="materialname"> 
+    {{kindF[kindFIndex].materialname}}
+          </picker>
+  </view>
+  <!--回收数量-->
+  <view class="item">
+    <view class="left h-s">回收数量</view>
+    <input type="number" class="right" bindinput="changeApplyAmount" vaule="{{applyAmount}}"/>
+  </view>
+    <!--预约日期-->
+  <view class="item">
+    <view class="left h-s">预约日期</view>
+     <picker mode="date" value="{{date}}" class="right"  start="{{date}}"  bindchange="bindDateChange">
+      {{date}}
+     </picker>
+  </view>
+
+  <!--回收地址-->
+  <view class="addressNull" wx:if="{{hasAddr?false:true}}" bindtap="toAddAddr">请先去添加回收地址信息！</view>
+  <!--回收地址-->
+  <view wx:elif="{{hasAddr?true:false}}" class="addressInfor">
+    <picker bindchange="addrPickerChange" value="{{addrIndex}}" range="{{addressList}}" range-key="selectList">  
+      <view class="info-item">
+        <view class="left-icon">
+          <image src="../../../images/address.png" />
+        </view>
+        <view class="right-info">
+          <view class="top">
+              <text class="top-item">联系人：{{addressList[addrIndex].username}}</text>
+              <text class="top-item">电话：{{addressList[addrIndex].smobile}}</text>
+          </view>
+            <view class="bot">
+              <text>地址：</text>
+              <text>{{addressList[addrIndex].selectList}}</text>
+            </view>
+        </view>
+      </view>
+    </picker> 
+  </view>
+
+</scroll-view>
+<!--提交按钮-->
+  <button bindtap="submitApply"  class="apply-add" disabled="{{canDo}}">提交申请</button>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

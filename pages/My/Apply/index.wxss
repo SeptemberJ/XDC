@@ -1,0 +1,163 @@
+.applyBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20rpx auto;
+}
+.picker{
+    /*border:1px solid red;*/
+    
+}
+
+.apply-amount input{
+    
+    /*margin-top: 15rpx;*/
+    padding-top: 15rpx;
+    display: inline-block;
+    border:1px solid red;
+
+
+}
+.applyInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20rpx auto;
+    border-top: 2px solid #f8e71d;
+
+}
+.apply-add {
+    width:80%;
+    /*position: absolute;*/
+    position: fixed;
+    left: 10%;
+    bottom: 100rpx;
+    /*background: #f7836a;*/
+	background: #E64340;
+	color: #fff;
+	font-weight: bold;
+}
+/*00000*/
+.item {
+    margin-top: 20rpx;
+    margin-left: 2%;
+    width: 96%;
+    /*background-color: #F1F5FF;*/
+    background-color: #FFFACD;
+    height: 100rpx;
+}
+
+.left {
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #FFFACD;
+    float: left;
+    width: 25%;
+}
+
+.right {
+    height: 60rpx;
+    margin-top: 15rpx;
+    float: left;
+    padding-left:10rpx;
+    padding-top: 13rpx;
+    background-color: white;
+    width: 70%;
+    border: 1px #FFE4B5 solid;
+    border-radius: 8rpx;
+}
+
+
+.pl-5{
+    padding-left: 10rpx;
+  
+}
+.h3{
+    font-size: 37rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+}
+.h-s{
+    font-size: 32rpx;
+    padding-left: 10rpx;
+    font-weight: bold;
+    color: #666;
+}
+
+/*address*/
+.addressInfor{
+    margin-top: 60rpx;
+    margin-left: 2%;
+    width: 96%;
+    /*background-color: #F1F5FF;*/
+    height: 200rpx;
+    border: 1px solid #FFF;
+    border-image: url('https://www.4008803828.com/wscxm/image/strap.jpg') 30 30 round;
+}
+
+.tableviewcell-t  image {
+	width: 60rpx;
+	height: 60rpx;
+    margin-top: 20rpx;
+}
+
+/*text*/
+.tableviewcell-t  text {
+	font-size: 14px;
+}
+
+.index{
+  margin-top: 170rpx;
+}
+.info-item{
+  width: 100%;
+
+}
+
+.left-icon{
+	width: 10%;
+	float: left;
+    margin: 60rpx auto;
+}
+.left-icon image{
+	width: 60rpx;
+	height: 60rpx;
+    
+}
+
+
+.right-info{
+	width: 90%;
+	float: left;
+}
+
+.top{
+    margin: 40rpx auto;
+	display:-webkit-inline-flex;
+	display: flex;
+	flex-flow: row nowrap;
+}
+.top-item{
+	flex: auto;
+    font-size: 32rpx;
+    color: #696969;
+}
+.top-item:nth-child(2){
+	text-align: right;
+    padding-right: 20rpx;
+}
+.bot{
+	
+    font-size: 32rpx;
+    color: #696969;
+}
+.picture{
+    background: #fff url('https://www.4008803828.com/wscxm/image/recycle.png') no-repeat center top/contain;
+    margin: 40rpx auto;
+    height: 200rpx;
+}
+.addressNull{
+    width: 100%;
+    margin: 20rpx auto;
+    text-align: center;
+}

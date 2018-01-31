@@ -1,0 +1,48 @@
+<!--回单编号-->
+<view class="recycleno">
+    <text>回单号：{{recycleno}}</text>
+</view>
+
+<!--显示表格-->
+<view class="showInfo">
+    <!--<form>-->
+    <view class="columnTit">
+        <text>种类</text>
+        <text>回收个数</text>
+        <text>回收重量(kg)</text>
+    </view>
+
+        <view class="content" wx:for="{{recycleInfor}}" wx:key="">
+            <textarea value="{{item.btype}}" disabled="true" auto-height="true"/>
+            <input value="{{item.snumber}}" disabled="true"/>
+            <input value="{{item.lweight}}" disabled="true"/>
+        </view>
+<!--</form>-->
+</view>
+<!--入库表格-->
+<view class="submitInfo">
+    <form bindsubmit="putInStorage">
+        <view class="columnTit">
+            <text>种类</text>
+            <text>入库个数</text>
+            <text>入库重量(kg)</text>
+        </view>
+
+        <view class="content" wx:for="{{recycleInfor}}" wx:key="">
+            <textarea name="kind{{index}}" value="{{item.btype}}" auto-height="true"/>
+            <input name="recycleAmount{{index}}" value="{{item.snumber}}"/>
+            <input name="recycleWeight{{index}}" value="{{item.lweight}}"/>
+        </view>
+
+        <view class="reason">
+            <textarea placeholder="请输入数量不符的原因" name="notSameReason" maxlength="150" auto-height="true"/>
+        </view>
+    
+    <button formType="submit" class="orderBt" hover-class="bthover" disabled="{{canDo}}">入库</button>
+    </form>
+</view>
+
+
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

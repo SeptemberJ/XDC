@@ -1,0 +1,87 @@
+<view class="topBlock">
+    <text class="topItem">回单号：{{recycleNum}}</text>
+    <!--<text class="topItem">共{{recycleList.total}}单</text>-->
+</view>
+
+
+
+
+<view class="mainBlock">
+<!--完成-->
+    <view class="sideBar" wx:if="{{finished.length>0}}">
+      <image src="../../../images/icon/label.png"></image>
+      <text>已完成</text>
+    </view>
+    <view class="recycleItem" wx:for="{{finished}}" wx:for-item="itemFinished" wx:for-index="Fidx" wx:key="">
+      <!--top--> 
+      <view class="top">
+          <!--left-->
+          <view class="left">
+              <view class="item">
+                  <text class="orderno" style="width:70%;">供应商：{{itemFinished.sname}}</text>
+              </view>
+              <view class="strap"></view>
+              <view  wx:if="{{itemFinished.list.length>0}}">
+                <!--种类部分  -->
+                <view class='Kinds' wx:for="{{itemFinished.list}}" wx:for-item="itemFinishedKind" wx:for-index="FidxKind" wx:key="">
+                  <text class='KindTit'>电池种类：{{itemFinishedKind.btype}}</text>
+                  <view class="item big">
+                    <view><text>入库数量：</text><input value='{{itemFinishedKind.snumber}}' bindinput='FeditLnumber' data-idx='{{FidxKind}}'  data-Oidx='{{Fidx}}'></input></view>
+                    <view class="sweight"><text>入库重量：</text><input value='{{itemFinishedKind.lweight}}' bindinput='FeditLweight' data-idx='{{FidxKind}}' data-oidx='{{Fidx}}'></input></view>
+                  </view> 
+                </view>
+                <!--//种类部分  -->
+              </view>
+               <view  class='NoKinds' wx:if="{{itemFinished.list.length==0}}"><text>该订单为已上门未回收的单子</text></view> 
+          </view>
+          <!--right-->
+          <view class="right" bindtap="toPutInStorageByOrder" data-num="{{itemFinished.orderno}}" data-idx='{{Fidx}}'>
+              <image src="../../../images/icon/Enter(2).png"></image>
+          </view>
+      </view>  
+    </view>
+<!--未完成-->
+    <view class="sideBar hasLine" wx:if="{{unfinished.length>0}}">
+      <image src="../../../images/icon/label.png"></image>
+      <text>未完成</text>
+    </view>
+    <view class="recycleItem" wx:for="{{unfinished}}" wx:for-item="itemUnfinished" wx:for-index="UFidx" wx:key="">
+      <!--top--> 
+      <view class="top">
+          <!--left-->
+          <view class="left">
+              <view class="item">
+                  <!-- <text class="orderno" style="width:70%;">订单号：{{itemUnfinished.orderno}}</text> -->
+                   <text class="orderno" style="width:70%;">供应商：{{itemUnfinished.sname}}</text>
+              </view>
+              <view class="strap"></view>
+               <view  wx:if="{{itemUnfinished.list.length>0}}">
+                <!--种类部分  -->
+                <view class='Kinds' wx:for="{{itemUnfinished.list}}" wx:for-item="itemUnfinishedKind" wx:for-index="UFidxKind" wx:key="">
+                  <text class='KindTit'>电池种类：{{itemUnfinishedKind.btype}}</text>
+                  <view class="item big">
+                    <view><text>入库数量：</text><input value='{{itemUnfinishedKind.snumber}}' data-idx='{{UFidxKind}}' disabled='true'></input></view>
+                    <view class="sweight"><text>入库重量：</text><input value='{{itemUnfinishedKind.lweight}}'  data-idx='{{UFidxKind}}' disabled='true'></input></view> 
+                  </view> 
+                </view>
+                <!--//种类部分  -->
+              </view>
+              <view  class='NoKinds' wx:if="{{itemUnfinished.list.length==0 && itemUnfinished.status == 4}}"><text>该订单为已上门未回收的单子</text></view> 
+          </view>
+              <!-- <view class="item big">
+                   <view><text>入库数量：</text><input value='{{itemUnfinished.lnumber}}' bindinput='UFeditLnumber' data-idx='{{UFidx}}' disabled='true'></input></view>
+                  <view class="sweight"><text>入库重量：</text><input value='{{itemUnfinished.sweight}}' bindinput='UFeditSweight' data-idx='{{UFidx}}' disabled='true'></input></view> 
+
+              </view>
+          </view> -->
+          <!--right-->
+          <view class="right" bindtap="" data-num="{{itemUnfinished.orderno}}" data-index="{{UFidx}}">
+              <image src="../../../images/icon/Enter.png"></image>
+          </view>
+      </view>  
+    </view>
+</view>
+
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

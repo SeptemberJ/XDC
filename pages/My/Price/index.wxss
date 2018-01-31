@@ -1,0 +1,46 @@
+
+.priceList{
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.price_item{
+	width:100%;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+	align-content: center;
+	align-items: center;
+    justify-content: center;
+	border-bottom: 1px solid #ccc;
+}
+.tit{
+	height: 100rpx;
+	line-height: 100rpx;
+	background: #FFFACD;
+}
+.tit text{
+	text-align: center;
+}
+.price_item text{
+	width:100%;
+    height: 100%;
+	font-size: 30rpx;
+	text-align: center;
+	border-right: 1px solid #ccc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.price_item text:nth-of-type(4){
+	border-right: 0px solid #ccc;
+}
+.noData{
+	margin-top: 20rpx;
+	text-align: center;
+}

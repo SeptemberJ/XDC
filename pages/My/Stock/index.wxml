@@ -1,0 +1,36 @@
+<scroll-view scroll-y="true">
+	<view class="SP-block">
+		<!--背景-->
+		<view class="topBox" style="">
+			<image src="../../../images/warehouse(2).png" />
+		</view>
+		<!--库存-->
+		<view class="stock-list">
+      <text>{{SPname}}</text>
+			<view class="item" >
+			<!--stockInfor-->
+				<view class="left">
+					<!-- first row -->
+					<view class="header">
+						<text class="kind">库存数量</text>
+						<!--<text class="kindVal">{{item.batteryKind}}</text>-->
+					</view>
+					<view class="header">
+						<!--<text class="amount">数量</text>-->
+						<input type="number" focus="{{ifFocus}}"disabled="{{ifDisabled}}" class="amountVal" value="{{stockAmount}}" bindinput="changeAmount"/>
+					</view>
+				</view>
+			<!--edit-->
+				<view class="right">
+					<image  bindtap="edit"src="../../../images/icon_edit.png" />
+				</view>
+			</view>
+		</view>
+		<!--编辑框-->
+		<view wx:if="{{ifShowBt}}" class="stock-bt">
+			<button bindtap="cancel"  class="stock-cancel">取消</button>
+			<button bindtap="saveStock"  class="stock-save">保存</button>
+		</view>
+
+	</view>
+</scroll-view>

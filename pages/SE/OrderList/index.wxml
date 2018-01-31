@@ -1,0 +1,35 @@
+<view class="orderTab">
+  <view class="tabItem {{currnet == index ? 'active' : ''}}" wx:for="{{orderTab}}" wx:key="" data-index="{{index}}" bindtap="changeTab">{{orderTab[index]}}</view>
+</view>
+
+<view class="InfoNull" wx:if="{{orderList.length<=0?true:false}}" bindtap="toAddAddr">
+    <image bindtap="SP_goDetail"src="../../../images/icon/orderNull.png" />
+    <text>您还没有相关的订单！</text>
+</view>
+
+<view class="orderListWrap" wx:else>
+    <view class="orderListItem" wx:for="{{orderList}}" wx:key="" bindtap="goToDetail" data-index="{{index}}">
+        <view class="item itemTop">
+            <text>订单号:{{item.orderno}}</text>
+            <text>申请日期:{{item.submitdate1}}</text>
+        </view>
+        <view class="item itemMid">
+            <text>物品品种:{{item.material}}</text>
+            <text>预约数量:{{item.number}}</text>
+        </view>
+        <view class="item itemFoot">
+            <view class="header">
+                <text>联系人:{{item.username}}</text>
+                <text>电话:{{item.smobile}}</text>
+		    </view>
+		    <view class="summary">
+                <text>地址:{{item.province+item.sarea+item.region+item.sblock}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

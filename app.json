@@ -1,0 +1,66 @@
+{
+  "pages": [
+    
+
+    "pages/Login/index",
+    "pages/ModifyPsd/index",
+    "pages/sign/index",
+    "pages/Index/index",
+    "pages/My/Index/index",
+    "pages/My/Stock/index",
+    "pages/My/Apply/index",
+    "pages/My/Price/index",
+    "pages/My/Address/list/list",
+    "pages/My/Address/add/add",
+
+    
+    
+    "pages/SP/OrderDetail/index",
+    
+    
+    "pages/SE/OrderList/index",
+    "pages/SE/OrderDetail/index",
+    "pages/SE/ConfirmDetail/index",
+    "pages/SE/FOrderDetail/index",
+
+    "pages/WH/RecycleDetail/index",
+    "pages/WH/putInStorage/index",
+    "pages/WH/Search/index",
+    "pages/WH/OrderList/index",
+    
+
+
+
+    "dist/tabbar"
+  ],
+  "window": {
+    "backgroundTextStyle": "white",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "阿拉环保车废信息系统",
+    "navigationBarBackgroundColor": "#5a8bab",
+    "backgroundColor": "#F2f2f2",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#fad972",
+    "borderStyle": "white",
+    "backgroundColor": "#609ddc",
+    "list": [
+      {
+        "pagePath": "pages/Index/index",
+        "iconPath": "images/icon/icon-check.png",
+        "selectedIconPath": "images/icon/icon-check-active.png",
+        "text": "主页"
+      },
+
+      {
+        "pagePath": "pages/My/Index/index",
+        "iconPath": "images/icon/icon-my.png",
+        "selectedIconPath": "images/icon/icon-my-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true
+}

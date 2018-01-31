@@ -1,0 +1,64 @@
+<scroll-view scroll-y="true" style="height:100%">
+  <view class="wrapper">
+    <!--地址-->
+    <view class="addressInfor">
+      <view class="info-item">
+        <view class="left-icon">
+          <image src="../../../images/icon_address.png" />
+        </view>
+        <view class="right-info">
+            <view class="top">
+              <text class="top-item">联系人:{{orderInfo.username}}</text>
+              <text class="top-item">{{orderInfo.smobile}}</text>
+            </view>
+            
+            <view class="bot">
+              <text>回收地址:</text>
+              <text>{{orderInfo.province+orderInfo.sarea+orderInfo.region+orderInfo.sblock}}</text>
+            </view>
+        </view>
+      </view>
+    </view>
+
+
+    <!--订单详情-->
+    <view class="order-detail">
+      <!--申请信息-->
+      <view class="item applyInformation">
+        <text>订单号:{{orderInfo.orderno}}</text>
+        <view class="applyInfo">
+          <text class="">物品种类:{{orderInfo.material}}</text>
+          <text class="">预约数量:{{orderInfo.snumber}}</text>
+        </view>
+      </view>
+      <!--确认信息-->
+      <view class="item mainInfor">
+        <view class="mainInforItem" wx:for="{{BatteryList}}" wx:key="">
+          <text class="bty">种类:{{item.btype}}</text>
+          <text class="bty">数量:{{item.lnumber}}</text>
+          <text class="bty">重量:{{item.lweight}}</text>
+        </view>
+        <view class="mainInforItem botInfo">
+          <text>三联单号:{{orderInfo.triplicate?orderInfo.triplicate:'----'}}</text>
+          <text>回收与否:{{orderInfo.status1?orderInfo.status1:'----'}}</text>
+        </view>
+        <view class="mainInforItem botInfo">
+          <text>原因:{{orderInfo.why?orderInfo.why:'----'}}</text>
+        </view>
+      </view>
+      <!--时间-->
+      <view class="item dateBox">
+        <text>申请日期:{{orderInfo.submitdate1}}</text>
+        <text>预约日期:{{orderInfo.ordering
+      ?orderInfo.ordering:'----'}}</text>
+        <!--<text wx:if="{{orderInfo.status==1 || orderInfo.status==2|| orderInfo.status==6}}">预计上门时间:{{orderInfo.recyclingdate1
+      ?orderInfo.recyclingdate1:'----'}}</text>
+        <text wx:elif="{{orderInfo.status!=1 && orderInfo.status!=2 && orderInfo.status!=6}}">回收日期:{{orderInfo.recyclingdate1?orderInfo.recyclingdate1:'----'}}</text>-->
+      </view>
+    </view>  
+
+  </view>
+</scroll-view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

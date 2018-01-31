@@ -1,0 +1,87 @@
+<!--address-->
+<view class="orderListItem" >
+        <view class="itemTop">
+            <text>订单号:{{orderInfo.orderno}}</text>
+            <text>申请日期:{{orderInfo.submitdate1}}</text>
+        </view>
+        <view class="itemMid">
+            <text>物品种类:{{orderInfo.material}}</text>
+            <text>预约数量:{{orderInfo.number}}</text>
+        </view>
+        <view class="itemFoot">
+            <view class="header">
+                <text>联系人:{{orderInfo.username}}</text>
+                <text>电话:{{orderInfo.smobile}}</text>
+		        </view>
+            <view class="summary">
+                    <text>地址:{{orderInfo.province+orderInfo.sarea+orderInfo.region+orderInfo.sblock}}</text>
+            </view>
+        </view>    
+</view>
+
+
+<form bindsubmit="formSubmit">
+<view class="oneKindItem" wx:for="{{KindIndexArrayF}}" wx:key="index" >
+  <!--left-->
+  <view class="KindItem-left">
+    <view class="main">
+      <view class="doubleBlock whole">
+      <text class="Label LabelSpe">种类：</text>
+      <!--一级-->
+        <picker name="kindF{{index}}" class="Val VaSpec" bindchange="KindPickerChangeF" value="{{KindIndexArrayF[index]}}" range="{{batteryKindF}}" id="{{index}}"> 
+  {{batteryKindF[KindIndexArrayF[index]]}}
+        </picker>
+  <!--二级-->
+        <picker name="kindS{{index}}" class="Val VaSpec" bindchange="KindPickerChangeS" value="{{KindIndexArrayS[index]}}" range="{{batteryKindS[KindIndexArrayF[index]]}}" id="{{index}}"> 
+  {{batteryKindS[KindIndexArrayF[index]][KindIndexArrayS[index]]}}
+        </picker>
+      </view>
+    </view>
+
+    <view class="main">
+      <view class="doubleBlock">
+        <text class="Label">数量：</text>
+        <input name="amount{{index}}" class="Val" type="number"  bindfocus="calculateAmountTotalDel" bindblur="calculateAmountTotalAdd"/>
+        <text class="Label">个</text>
+      </view>
+      <view class="doubleBlock">
+        <text class="Label">重量：</text>
+        <input name="weight{{index}}" class="Val" type="digit" value=""/>
+        <text class="Label">kg</text>
+      </view>
+    </view>
+     
+  </view>
+
+  <!--right delete-->
+  <view class="KindItem-right" bindtap="delOneKind" id="{{index}}">
+    <image src="../../../images/icon_delete.png" />
+  </view>
+
+</view>
+
+<view class="addOneKind" bindtap="addOne">
+  <image src="../../../images/add.png" />
+</view>
+
+
+<view class="item">
+  <view class="item1" >三联单编号</view>
+  <input  name="threeNumber" class="thrNo" value="{{ThreeNumber}}" disabled="{{ThreeNumber=='无'}}"/>
+</view>
+
+<!-- <view class="item">
+  <view class="item1">回收结果</view>
+  <picker name="resultInfo" class="item2 result" bindchange="resultPickerChange" value="{{resultIndex}}" range="{{results}}"> 
+  {{results[resultIndex]}}
+  </picker>
+</view> -->
+
+<view class="item lastItem">
+  <view class="item1">未回收原因</view>
+  <input name="reason" class="reason"/>
+</view>
+
+<!--submit-->
+<button formType="submit" class="orderBt" hover-class="bthover">提交</button>
+</form>

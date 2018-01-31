@@ -1,0 +1,173 @@
+.topBlock{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50rpx;
+    padding: 20rpx;
+    border-bottom: 5px solid #eee;
+}
+.topItem{
+    width: 100%;
+}
+
+.topItem{
+    text-align: center;
+}
+/*sideBar*/
+.sideBar{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+/*.hasLine{
+  border-top: 2px solid #eee;
+}*/
+.sideBar image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.sideBar text{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 10rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #5a8bab;
+}
+
+.mainBlock{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+
+.recycleItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx;
+    /*background: #CAE1FF;*/
+    margin-top: 10rpx;
+}
+.top{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.percent{
+    width: 100%;
+    height:20rpx;
+    margin: 10rpx;
+}
+.left{
+    width: calc(100% - 100rpx);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx 5rpx;
+    border-right: 2rpx solid #eee;
+}
+.right{
+    width: 100rpx;
+    height: 160rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 20rpx auto;
+}
+.right image{
+    width: 60rpx;
+    height: 60rpx;
+    display: flex;
+}
+.Kinds{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10rpx 20rpx;
+}
+.KindTit{
+  width: 100%;
+  text-align: left;
+  font-size: 30rpx;
+}
+.item{
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20rpx;
+}
+.orderno{
+  text-align: left;
+  font-weight: bold;
+}
+/*.orderno{
+    width:70%;
+    display: flex;
+
+}
+.rate{
+    width:30%;
+    display: flex;
+
+}*/
+.sweight{
+    border-left: 2rpx solid #ccc;
+    text-align: right;
+}
+.big{
+    /* height: 60rpx; */
+}
+
+.item text{
+    width: 100%;
+    font-size: 30rpx;
+    flex-grow: 1;
+}
+.item view{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30rpx;
+}
+.item input{
+    width: 100%;
+    font-size: 30rpx;
+    flex-grow: 1;
+}
+.sweight input{
+    text-align: left;
+}
+
+.strap{
+    width: 100%;
+    height:4rpx;
+    background: #eee;
+}
+.col{
+    background: red;
+}
+.NoKinds{
+  margin-top: 5rpx;
+}
+.NoKinds text{
+  font-size: 30rpx;
+}
